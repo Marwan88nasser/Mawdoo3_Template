@@ -5,14 +5,17 @@
   padding: 0;
   width: 100%;
   min-height: 60px;
+  padding: 5px 0px;
   background-color: transparent;
-  z-index: 1111;
+  z-index: 111;
+  transition: all 260ms ease;
   .container {
+    gap: 10px;
     .logo-holder {
       margin: 0px;
       a {
         .logo {
-          width: 150px;
+          width: 120px;
           height: auto;
         }
       }
@@ -23,14 +26,106 @@
           .nav-link {
             font-size: 14px;
             color: #fff;
-            padding: 8px 13px;
+            padding: 5px 13px;
             transition: all 300ms ease;
             &:hover {
-                opacity: .6;
+              opacity: 0.6;
             }
           }
         }
       }
+    }
+    .nav-search {
+      width: 200px;
+      max-width: 100%;
+      min-height: 37px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: $white;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,.15);
+      input {
+        border: 0;
+        font-size: 14px;
+        border-radius: 8px;
+        padding: 5px;
+        width: 100%;
+        &::placeholder {
+          font-size: 13px;
+        }
+        &:focus::placeholder {
+          opacity: 0;
+          transition: all 300ms ease;
+        }
+      }
+      .search-btn {
+        position: absolute;
+        left: -10px;
+        top: -2px;
+        padding: 11px;
+        border-radius: 8px;
+        background-color: $main-color;
+        color: $white;
+      }
+      display: none;
+    }
+  }
+  &.alt-nav {
+    position: relative;
+    background-color: $white;
+    box-shadow: 0 10px 50px rgb(0 0 0 / 7%);
+    border-bottom: 1px solid #ececec;
+    transition: all 260ms ease;
+    .navbar-collapse {
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: black;
+          }
+        }
+      }
+    }
+    .nav-search {
+      width: 600px;
+      display: flex;
+      input {
+        padding: 9px;
+        padding-right: 30px;
+      }
+      .search-btn {
+        left: auto;
+        right: 0px;
+        top: 0px;
+        padding: 11px 6px;
+        background-color: transparent;
+        color: $main-color;
+        i,svg {
+          font-size: 18px;
+        }
+      }
+      @include maxWidth(md) {
+        width: 300px;
+      }
+    }
+  }
+  &.sticky-nav {
+    position: fixed;
+    background-color: $white;
+    box-shadow: 0 10px 50px rgb(0 0 0 / 7%);
+    border-bottom: 1px solid #ececec;
+    .navbar-collapse {
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: black;
+          }
+        }
+      }
+    }
+    .nav-search {
+      display: flex;
     }
   }
 }

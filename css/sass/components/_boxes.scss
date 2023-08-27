@@ -1,14 +1,16 @@
 .box-article {
   width: 100%;
   background-color: #fff;
+  // background-color: #f9f9f9;
   border-radius: 15px;
   padding: 16px;
   height: 100%;
+  box-shadow: 0 0 2px 0 #0000001f;
   .img-holder {
     position: relative;
     display: block;
     width: 100%;
-    height: 93px;
+    height: 100px;
     margin-bottom: 12px;
     img {
       @include full-w-h;
@@ -22,7 +24,7 @@
       position: absolute;
       top: 10px;
       left: 10px;
-      background-color: #1d8387;
+      background-color: $main-color;
       color: #fff;
       border-radius: 8px;
       font-size: 12px;
@@ -67,7 +69,9 @@
       padding: 10px 15px;
       border-bottom: 1px solid black;
       color: black;
-      i,svg {
+      font-weight: 600;
+      i,
+      svg {
         font-size: 30px;
         margin-left: 5px;
       }
@@ -90,6 +94,7 @@
       display: block;
       padding: 10px 10px;
       font-size: 18px;
+      font-weight: 600;
       span {
         color: black;
       }
@@ -146,7 +151,7 @@
       }
     }
   }
-  &.purple  {
+  &.purple {
     .list-item-head {
       a {
         border-bottom: 1px solid #794399;
@@ -170,14 +175,321 @@
       }
     }
   }
+  &.light-green {
+    .list-item-head {
+      a {
+        border-bottom: 1px solid #6dba86;
+        color: #6dba86;
+      }
+      &:hover {
+        background-color: #6dba86;
+        a {
+          color: white;
+        }
+      }
+    }
+    .list-item {
+      .list-link {
+        span {
+          color: #6dba86;
+        }
+        &:hover {
+          color: #6dba86;
+        }
+      }
+    }
+  }
+  &.light-blue {
+    .list-item-head {
+      a {
+        border-bottom: 1px solid #3a9eb6;
+        color: #3a9eb6;
+      }
+      &:hover {
+        background-color: #3a9eb6;
+        a {
+          color: white;
+        }
+      }
+    }
+    .list-item {
+      .list-link {
+        span {
+          color: #3a9eb6;
+        }
+        &:hover {
+          color: #3a9eb6;
+        }
+      }
+    }
+  }
 }
 
 .ads-in-list {
   width: 100%;
-  height: 250px;
   margin-bottom: 20px;
+  img {
+    width: 100%;
+    min-height: 250px;
+    object-fit: contain;
+  }
+}
+
+.ads-article {
+  width: 100%;
+  height: fit-content;
   img {
     @include full-w-h;
     object-fit: contain;
+  }
+}
+
+.box-view-article {
+  padding: 15px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  border-radius: 4px;
+  .article-data {
+    .article-title {
+      margin-bottom: 20px;
+      font-size: 32px;
+      color: #333;
+      font-weight: 700;
+    }
+    .author-data {
+      @include flex-start;
+      gap: 10px;
+      margin-bottom: 15px;
+      .img-holder {
+        width: 60px;
+        height: 60px;
+        .author-img {
+          @include circle(100%);
+        }
+      }
+      .data {
+        .def {
+          margin-bottom: 5px;
+          a {
+            color: $main-color;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+        .date {
+          margin-bottom: 0;
+        }
+      }
+    }
+    .article-image {
+      width: 100%;
+      height: 295px;
+      margin-bottom: 20px;
+      .article-img {
+        @include full-w-h;
+        border-radius: 4px;
+      }
+    }
+    .related-list {
+      border-bottom: 2px solid #ddd;
+      li {
+        &:not(:last-child) {
+          border-bottom: 1px solid #ddd;
+        }
+      }
+      .title {
+        padding: 10px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .list-item {
+        .list-link {
+          display: block;
+          padding: 10px;
+          font-weight: 700;
+          font-size: 14px;
+          color: $main-color;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .content-list {
+      list-style: arabic-indic;
+      padding-right: 20px;
+      border-bottom: 2px solid #ddd;
+      .title {
+        margin-bottom: 0;
+        padding: 10px;
+        font-weight: 700;
+        font-size: 18px;
+        background-color: #f3f3f3;
+        border-bottom: 2px solid $main-color;
+      }
+      .list-item {
+        .list-link {
+          display: block;
+          padding: 10px;
+          font-weight: 700;
+          font-size: 14px;
+          color: $main-color;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+    .box-reference {
+      margin-bottom: 20px;
+      .reference-title {
+        position: relative;
+        width: 100%;
+        text-align: right;
+        font-weight: 700;
+        padding: 9px 20px;
+        font-size: 25px;
+        border: 1px solid #eaeaea;
+        border-bottom: 2px solid $main-color;
+        background-color: $white;
+        &::before {
+          content: "[+]";
+          position: absolute;
+          top: 50%;
+          right: 115px;
+          font-weight: 600;
+          transform: translateY(-50%);
+          color: $main-color;
+          transition: all 300ms ease;
+        }
+        &[aria-expanded="true"] {
+          &::before {
+            content: "[-]";
+          }
+        }
+      }
+      .card-reference {
+        background: #f8f8f8;
+        border: 1px solid #eaeaea;
+        border-top: none;
+        padding: 15px;
+        .list-reference {
+          list-style: arabic-indic;
+          padding-right: 20px;
+          li {
+            &:not(:last-child) {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+    .box-rate {
+      padding: 15px;
+      border-radius: 10px;
+      background-color: #f4f4f4;
+      text-align: center;
+      margin-bottom: 20px;
+      .title {
+        margin-bottom: 15px;
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+      }
+      .btn-holder {
+        @include flex-center;
+        gap: 20px;
+        .btn-circle {
+          @include circle(50px);
+          @include flex-center;
+          border-width: 2px;
+          font-weight: 700;
+        }
+      }
+    }
+    .share-bar {
+      @include flex-between;
+      flex-wrap: wrap;
+      gap: 15px;
+      border-bottom: 2px solid $main-color;
+      padding: 10px;
+      margin-bottom: 10px;
+      .share {
+        @include flex-start;
+        gap: 10px;
+        span {
+          font-weight: 600;
+        }
+        .btn-share {
+          padding: 3px 10px;
+          font-size: 13px;
+          color: $white;
+          transition: all 300ms ease;
+          &.fc {
+            background-color: #3c5a9a;
+          }
+          &.tw {
+            background-color: #329bc2;
+          }
+          &:hover {
+            transform: scale(1.06);
+          }
+        }
+      }
+    }
+    .more-article {
+      .title {
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 18px;
+      }
+      .box-article {
+        padding: 0px;
+        box-shadow: none;
+        .img-holder {
+          margin-bottom: 6px;
+        }
+        .name {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .article-common {
+    .common-title {
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+      padding: 10px;
+      font-weight: 700;
+      font-size: 18px;
+    }
+    .box-article {
+      padding: 0px;
+      box-shadow: none;
+      .img-holder {
+        margin-bottom: 6px;
+      }
+      .name {
+        font-size: 14px;
+      }
+    }
+    .other-article {
+      .list-item {
+        .list-link {
+          &:first-child {
+            padding-top: 0;
+          }
+          display: block;
+          padding: 12px 10px;
+          font-weight: 700;
+          font-size: 17px;
+          color: $main-color;
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }

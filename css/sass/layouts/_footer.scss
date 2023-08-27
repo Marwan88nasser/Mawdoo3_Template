@@ -1,0 +1,61 @@
+.main-footer {
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+  .container {
+    .content {
+      @include flex-between;
+      flex-wrap: wrap;
+      .right-content {
+        @include flex-column;
+        gap: 15px;
+        .contact-icon {
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 20px;
+          .icon-holder {
+            @include flex-center;
+            width: 32px;
+            height: 32px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            transition: border 1s;
+            transition: opacity 0.5s;
+            i,
+            svg {
+              font-size: 20px;
+              color: $main-color;
+            }
+            &:hover {
+              border-color: $main-color;
+              opacity: 0.5;
+            }
+          }
+        }
+        .copy {
+          color: #545454;
+          margin-bottom: 0;
+          font-size: 14px;
+        }
+      }
+      .left-content {
+        @include flex-between;
+        flex-wrap: wrap;
+        gap: 50px;
+        .lits-sections {
+          .list-item {
+            .list-link {
+              display: block;
+              padding: 4px 5px;
+              font-size: 14px;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

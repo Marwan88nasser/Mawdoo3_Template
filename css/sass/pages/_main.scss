@@ -4,9 +4,20 @@
   .overlay-landing {
     position: relative;
     height: calc(100% - 120px);
-    background: url("../images/landing-bg.jpg") center;
+    background: url("../images/landing-bg.png") center;
     background-color: $white;
     @include flex-center;
+    z-index: 1;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgb(234 100 15 / 60%);
+      z-index: -1;
+    }
     .container {
       @include flex-center;
       .content-landing {
@@ -18,6 +29,9 @@
           line-height: 55px;
           text-align: center;
           color: $white;
+          @include maxWidth(sm) {
+            font-size: 1.7rem;
+          }
         }
         .landing-search {
           position: relative;
@@ -28,6 +42,9 @@
           @include flex-between;
           border-radius: 6px;
           height: 70px;
+          @include maxWidth(sm) {
+            width: 100%;
+          }
           input {
             width: 100%;
             padding: 0px 8px;
@@ -36,8 +53,8 @@
             font-size: 16px;
             margin: 0 !important;
             &:focus::placeholder {
-                opacity: 0;
-                transition: all 300ms ease;
+              opacity: 0;
+              transition: all 300ms ease;
             }
           }
           .search-icon {
@@ -45,11 +62,11 @@
             width: 70px;
             height: 100%;
             font-size: 27px;
-            color: #ed706b;
+            color: $main-color-light;
           }
           .search-btn {
             width: 110px;
-            background-color: #1d8387;
+            background-color: $main-color;
             text-align: center;
             height: 56px;
             line-height: 56px;
@@ -61,12 +78,13 @@
             margin: 8px;
             transition: all 300ms ease;
             &:hover {
-                background-color: #126569;
+              background-color: $main-color-light;
             }
           }
         }
       }
     }
+    
   }
   .banner-ads {
     height: 120px;
@@ -84,5 +102,6 @@
 }
 
 .topics-section {
-    background-color: #fff;
+  background-color: #fff;
+  // background-color: #f9f9f9;
 }
