@@ -31,8 +31,6 @@ select:focus {
   outline: none;
 }
 
-
-
 /* end scrollbar */
 .up-btn {
   position: fixed;
@@ -46,7 +44,8 @@ select:focus {
   overflow: hidden;
   cursor: pointer;
   transition: 0.4s;
-  i,svg {
+  i,
+  svg {
     font-size: 17px;
   }
   &.show {
@@ -71,4 +70,145 @@ select:focus {
 .breadcrumb-bg {
   background-color: #e9e9e9;
   padding: 10px;
+}
+
+.contact {
+  padding-bottom: 70px !important;
+  position: relative;
+  z-index: 1;
+  &::after,
+  &::before {
+    filter: brightness(0) saturate(100%) invert(43%) sepia(97%) saturate(1755%)
+      hue-rotate(355deg) brightness(94%) contrast(96%);
+  }
+  &::after {
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 0;
+    z-index: -1;
+    top: 35px;
+    content: url("../images/layer-1.png");
+  }
+  &::before {
+    position: absolute;
+    width: auto;
+    height: auto;
+    right: 0;
+    z-index: -1;
+    bottom: 0;
+    content: url("../images/layer-2.png");
+  }
+  .form {
+    box-shadow: 2px 10px 28px rgba(75, 0, 129, 0.12);
+    border-radius: 10px;
+    background-color: $white;
+    padding: 20px;
+    padding-right: 50px;
+    margin: 0 auto;
+    max-width: 950px;
+    .main-title {
+      margin-bottom: 30px;
+    }
+    .title {
+      font-weight: 400;
+      font-size: 24px;
+      margin-bottom: 30px;
+      line-height: 27px;
+      color: #0f001a;
+    }
+    .boxes {
+      display: flex;
+      gap: 80px;
+      .box {
+        flex: 1;
+        label {
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 18px;
+          display: block;
+          color: #0f001a;
+          opacity: 0.8;
+          margin-bottom: 13px;
+          .sm {
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 13px;
+            color: rgba(15, 0, 26, 0.7);
+          }
+        }
+        .inp {
+          margin-bottom: 14px;
+        }
+        .btn-sub {
+          background-color: $main-color;
+          color: $white;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 4px;
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 20px;
+          padding: 15px;
+        }
+        &.two {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          .item {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            .icon {
+              width: 20px;
+              height: auto;
+              filter: brightness(0) saturate(100%) invert(43%) sepia(97%)
+                saturate(1755%) hue-rotate(355deg) brightness(94%) contrast(96%);
+            }
+            .text {
+              font-weight: 400;
+              font-size: 16px;
+              line-height: 22px;
+              color: #0f001a;
+            }
+          }
+          .social {
+            margin-top: 3px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            a {
+              .icon {
+                color: $main-color;
+                font-size: 21px;
+              }
+            }
+          }
+          .map {
+            iframe {
+              border-radius: 4px;
+              width: 100%;
+              height: 155px;
+              margin-top: 12px;
+            }
+          }
+        }
+      }
+    }
+    @include maxWidth(md) {
+      padding-right: 20px;
+      .boxes {
+        flex-direction: column;
+        gap: 1rem;
+        .box {
+          &.two {
+            .item {
+              gap: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
 }
