@@ -242,6 +242,9 @@
     @include full-w-h;
     object-fit: contain;
   }
+  &.ads-article-sm {
+    height: 150px;
+  }
 }
 
 .box-view-article {
@@ -455,10 +458,17 @@
         }
       }
     }
+    .box-article {
+      padding: 10px;
+      box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1215686275);
+      .name {
+        font-size: 14px;
+      }
+    }
   }
   .article-common {
     .common-title {
-      border-bottom: 2px solid #ddd;
+      border-bottom: 1px solid #ddd;
       margin-bottom: 20px;
       padding: 10px;
       font-weight: 700;
@@ -489,6 +499,12 @@
             text-decoration: underline;
           }
         }
+      }
+    }
+    .ads-in-list {
+      height: 250px;
+      img {
+        height: 100%;
       }
     }
   }

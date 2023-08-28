@@ -56,6 +56,14 @@
   padding: 35px 0;
 }
 
+.section-tap .nav-item .nav-link.active {
+  color: #ea640f;
+}
+
+.section-tap-content {
+  padding: 20px 0px;
+}
+
 .main-title {
   text-align: start;
   font-size: 25px;
@@ -309,6 +317,9 @@
   -o-object-fit: contain;
      object-fit: contain;
 }
+.ads-article.ads-article-sm {
+  height: 150px;
+}
 
 .box-view-article {
   padding: 15px;
@@ -522,8 +533,15 @@
 .box-view-article .article-data .more-article .box-article .name {
   font-size: 14px;
 }
+.box-view-article .article-data .box-article {
+  padding: 10px;
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, 0.1215686275);
+}
+.box-view-article .article-data .box-article .name {
+  font-size: 14px;
+}
 .box-view-article .article-common .common-title {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 1px solid #ddd;
   margin-bottom: 20px;
   padding: 10px;
   font-weight: 700;
@@ -551,6 +569,12 @@
 }
 .box-view-article .article-common .other-article .list-item .list-link:hover {
   text-decoration: underline;
+}
+.box-view-article .article-common .ads-in-list {
+  height: 250px;
+}
+.box-view-article .article-common .ads-in-list img {
+  height: 100%;
 }
 
 .inp {

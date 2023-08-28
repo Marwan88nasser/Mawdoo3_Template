@@ -48,3 +48,18 @@
 .main-section {
   padding: 35px 0;
 }
+
+.section-tap {
+  // border-bottom-width: 2px;
+  .nav-item {
+    .nav-link {
+      // border-width: 2px;
+      &.active {
+        color: $main-color;
+      }
+    }
+  }
+}
+.section-tap-content {
+  padding: 20px 0px;
+}
