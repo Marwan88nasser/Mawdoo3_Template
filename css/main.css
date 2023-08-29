@@ -876,6 +876,7 @@ select:focus {
 .main-nav .container .navbar-collapse .navbar-nav .nav-item .nav-link {
   font-size: 14px;
   color: #fff;
+  font-weight: 500;
   padding: 5px 13px;
   transition: all 300ms ease;
 }
@@ -980,7 +981,8 @@ select:focus {
 .land-section .overlay-landing {
   position: relative;
   height: calc(100% - 120px);
-  background: url("../images/landing-bg.png") center;
+  background: url("../images/landing-bg.jpg") center no-repeat;
+  background-size: cover;
   background-color: white;
   display: flex;
   align-items: center;
@@ -994,7 +996,7 @@ select:focus {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(29, 148, 210, 0.3);
+  background-color: rgba(29, 148, 210, 0.25);
   z-index: -1;
 }
 .land-section .overlay-landing .container {
